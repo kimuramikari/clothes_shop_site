@@ -20,17 +20,4 @@
 - 商品の編集(clothes/edit)
 - 商品の削除(clothes/delete)
 - 商品の在庫確認(clothes/detail)
-
-**管理者を管理する人ができること**
-- ログイン(shop/login)
-- ログアウト(shop/logout)
-- アカウントの追加(admin_add)
-- アカウントの削除(admin_delete)
-- アカウントの編集(admin_edit)
- 
-****
-
-1. **必要なテーブル**
-**服**
-
-
+- アカウント編集(admin/edit)
