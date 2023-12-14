@@ -2,9 +2,9 @@
 洋服屋のECサイト
 
 **ログインしていない人が使える機能**
--商品の検索(shop/search)
--商品の閲覧(shop/detail)
--ユーザー登録(sinin)
+- 商品の検索(shop/search)
+- 商品の閲覧(shop/detail)
+- ユーザー登録(sinin)
 
 **アカウントを持っている顧客が使える機能**
 -ログイン(login)
