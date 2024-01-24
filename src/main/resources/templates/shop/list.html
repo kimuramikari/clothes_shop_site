@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.w3.org/1999/html">
+<th:block th:replace="~{layout :: head(ClothesShop)}"></th:block>
+
+<body>
+<th:block th:replace="~{layout :: header}"></th:block>
+<main>
+    <div class="content_body">
+        <h3>商品一覧</h3>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                    <th>商品名</th>
+                    <th>商品番号</th>
+                    <th>単価</th>
+                    <th>在庫</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>サンプルテキスト</td>
+                    <td>サンプルテキスト</td>
+                    <td>サンプルテキスト</td>
+                    <td>サンプルテキスト</td>
+                    <td>
+                        <a class="btn btn-success">編集</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger">削除</a>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<th:block th:replace="~{layout :: footer}"></th:block>
+<style>
+    .content_body{
+        margin:0 10% ;
+    }
+    .content_body h2{
+        text-align: center;
+    }
+</style>
+</body>
+</html>

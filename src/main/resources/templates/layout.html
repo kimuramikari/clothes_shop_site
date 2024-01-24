@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block th:fragment="head(title)">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title th:text="${title}">Welcome</title>
+    </head>
+</th:block>
+<body>
+    <th:block th:fragment="header">
+        <header>
+            <nav>
+                <div>
+                    <ul>
+                        <li><a th:href="@{/}">Home</a></li>
+                        <!--ログインしてない人に表示させる-->
+                        <li sec:authorize="isAnonymous()"><a th:href="@{/login}">ログイン</a></li>
+                        <li sec:authorize="isAnonymous()"><a th:href="@{/common/register}">新規登録</a></li>
+
+                        <!--ログインした人(お客)に表示させる-->
+                        <li><a href="#">カート</a></li>
+                        <!--ログインした人に表示させる-->
+                        <li><a href="#">注文履歴</a></li>
+                        <!--ログインした人に表示させる-->
+                        <li><a href="#">ユーザー編集</a></li>
+                        <!--管理者アカウントでログインした人に表示させる-->
+                        <li><a href="#">商品一覧</a></li>
+                        <!--管理者アカウントでログインした人に表示させる-->
+                        <li><a href="#">商品追加</a></li>
+                        <!--管理者アカウントでログインした人に表示させる-->
+                        <li><a href="#">注文表</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </th:block>
+<th:block th:fragment="footer">
+    <div class="footer">
+    <footer>
+        <div class="f_div">
+            <h4>CLOTHES　SHOP</h4>
+            <div class="fw_div">
+                <div class="footer_flex">
+                    <div class="tel">
+                        <p>000-00000-0000</p>
+                    </div>
+                    <div class="address">
+                        <p>◯◯県○○市0-000-0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <style>
+        body{
+            margin: 0;
+            padding:0;
+            font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+        }
+        header{
+            width: 100%;
+            height: 70px;
+            background-color: #b89191;
+            margin: 0;
+            padding: 0;
+        }
+        header nav{
+            width: 100%;
+        }
+        header nav div{
+            text-align: end;
+        }
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+            padding-right: 20px;
+            margin-top: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: aliceblue;
+            transition: .2s;
+            padding: 10px;
+        }
+        main .bg-image{
+            width: 100%;
+            height: 600px;
+            background-size: cover;
+            background-position-y: -100px;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            text-shadow: 0px 0px 5px black;
+            font-size: 2rem;
+        }
+        main .bg-image h2{
+            padding-top: 20%;
+        }
+        footer .f_div{
+            width: 100%;
+            text-align: center;
+        }
+        footer .f_div .fw_div{
+            width: 100%;
+        }
+        footer .f_div .fw_div .footer_flex{
+            display: flex;
+            justify-content: center;
+
+        }
+        footer .f_div .fw_div .footer_flex .tel{
+            margin-right: 10px;
+        }
+        .footer{
+            width: 100%;
+            margin-top: 100vh;
+            position: relative;
+        }
+        .footer footer{
+            position: absolute;
+            bottom: 0;
+            background-color: #547709;
+            width: 100%;
+            padding-top: 5%;
+            color: white;
+
+        }
+        .footer p {
+            font-size: 1rem;
+        }
+
+    </style>
+</th:block>
+</body>
+</html>

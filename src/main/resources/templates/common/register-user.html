@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.w3.org/1999/html">
+<th:block th:replace="~{layout :: head(ClothesShop)}"></th:block>
+
+<body>
+<th:block th:replace="~{layout :: header}"></th:block>
+<main>
+    <h3>ユーザー登録</h3>
+    <form th:action="@{/common/register-exe}" method="post" th:object="${userForm}">
+        <div  class="mb-3">
+            <label class="form-label" for="username">ユーザー名</label>
+            <input class="form-control" type="text" name="username" th:field="*{username}" required minlength="5" maxlength="64" id="username">
+            <div th:errors="*{username}" class="alert alert-danger"></div>
+        </div>
+        <div  class="mb-3">
+            <label class="form-label" for="password">パスワード</label>
+            <input class="form-control" type="password" name="password" th:field="*{password}" required minlength="8" maxlength="64" id="password">
+            <div th:errors="*{password}" class="alert alert-danger"></div>
+        </div>
+        <div  class="mb-3">
+            <label class="form-label" for="name">氏名</label>
+            <input class="form-control" type="text" name="name" th:field="*{name}" maxlength="255" id="name">
+            <div th:errors="*{name}" class="alert alert-danger"></div>
+        </div>
+        <button class="btn btn-primary" type="submit">登録</button>
+    </form>
+
+</main>
+<th:block th:replace="~{layout :: footer}"></th:block>
+
+</body>
+</html>
