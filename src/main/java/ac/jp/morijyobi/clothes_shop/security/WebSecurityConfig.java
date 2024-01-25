@@ -18,6 +18,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/common/**").permitAll()
+                        .anyRequest().authenticated()// 上のもの以外はログインが必要
                 ).formLogin(login -> login
                 .loginProcessingUrl("/login") //ログイン処理のURLを指定している。ユーザID・PWの送信先URL(POST)
                 .loginPage("/login") //ログイン画面のURL --　GET

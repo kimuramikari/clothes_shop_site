@@ -14,9 +14,15 @@ public interface UsersMapper {
             "INNER JOIN authorities AS a ON a.id = u.authority_id " +
             "WHERE u.username = #{username}")
     LoginUserDTO selectUserByUsername(String username);
+//
+//    @Insert("INSERT INTO users VALUES (default, #{username}, #{password}," +
+//            " #{name}, #{authorityId})")
+//    @Options(useGeneratedKeys = true, keyProperty = "id")
+//    void insertUser(User user);
+//
 
-    @Insert("INSERT INTO users VALUES (default, #{username}, #{password}," +
-            " #{name}, #{authorityId})")
-    @Options(useGeneratedKeys = true, keyProperty = "id")
+//   新規登録 住所などの登録
+    @Insert("INSERT INTO users VALUES (default,#{username},#{password},#{name},#{address},#{email},#{tel},#{authorityId})")
+    @Options(useGeneratedKeys = true,keyProperty = "id")
     void insertUser(User user);
 }
